@@ -138,31 +138,34 @@ export var TemplatedTileLayer = L.TileLayer.extend({
     return this.options.pane;
   },
   _fetchTile: function (coords, tile) {
-    fetch(this.getTileUrl(coords), { redirect: 'follow' })
-      .then(function (response) {
-        if (response.status >= 200 && response.status < 300) {
-          return Promise.resolve(response);
-        } else {
-          console.log(
-            'Looks like there was a problem. Status Code: ' + response.status
-          );
-          return Promise.reject(response);
-        }
-      })
-      .then(function (response) {
-        return response.text();
-      })
-      .then((text) => {
-        var parser = new DOMParser();
-        return parser.parseFromString(text, 'application/xml');
-      })
-      .then((mapml) => {
-        this._createFeatures(mapml, coords, tile);
-        this._mapmlTileReady(tile);
-      })
-      .catch((err) => {
-        console.log('Error Creating Tile');
-      });
+    let url = this.getTileUrl(coords);
+    if (url) {
+      fetch(url, { redirect: 'follow' })
+        .then(function (response) {
+          if (response.status >= 200 && response.status < 300) {
+            return Promise.resolve(response);
+          } else {
+            console.log(
+              'Looks like there was a problem. Status Code: ' + response.status
+            );
+            return Promise.reject(response);
+          }
+        })
+        .then(function (response) {
+          return response.text();
+        })
+        .then((text) => {
+          var parser = new DOMParser();
+          return parser.parseFromString(text, 'application/xml');
+        })
+        .then((mapml) => {
+          this._createFeatures(mapml, coords, tile);
+          this._mapmlTileReady(tile);
+        })
+        .catch((err) => {
+          console.log('Error Creating Tile');
+        });
+    }
   },
 
   // TO DO: get rid of this function altogether; see TO DO below re: map-link
