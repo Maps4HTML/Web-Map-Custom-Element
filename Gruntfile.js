@@ -25,6 +25,7 @@ module.exports = function(grunt) {
           'dist/mapml.js':        ['<%= rollup.main.dest %>'],
           'dist/web-map.js':      ['src/web-map.js'],
           'dist/mapml-viewer.js': ['src/mapml-viewer.js'],
+          'dist/map-feature-table.js': ['src/map-feature-table.js'],
           'dist/map-caption.js':  ['src/map-caption.js'],
           'dist/map-feature.js':  ['src/map-feature.js'],
           'dist/map-extent.js':   ['src/map-extent.js'],
