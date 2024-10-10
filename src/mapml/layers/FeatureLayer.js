@@ -154,6 +154,18 @@ export var FeatureLayer = L.FeatureGroup.extend({
       // hide/display features based on the their zoom limits
       this._validateRendering();
     }
+    layerToAdd.options.group.addEventListener('mouseover', function () {
+      // Move hovered element to the end of its parent container
+      this.parentNode.appendChild(this);
+    });
+    //layerToAdd.options.group.addEventListener('mouseout', function () {
+    //  // bring g element back to it's original location
+    //  const originalPosition = Array.prototype.slice
+    //    .call(this.parentNode.children)
+    //    .indexOf(layerToAdd.options.group);
+    //  let beforeElement = this.parentNode.children[originalPosition + 1];
+    //  this.parentNode.insertBefore(this, beforeElement);
+    //});
     return this;
   },
   addRendering: function (featureToAdd) {
