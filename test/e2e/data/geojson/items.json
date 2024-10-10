@@ -1,0 +1,430 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "1535.115.1",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.1",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5208,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 1,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.66
+            }
+        },
+        {
+            "id": "1535.115.2",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.2",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.26,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 4728,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 2,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.8
+            }
+        },
+        {
+            "id": "1535.115.3",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.3",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5207,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 3,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.62
+            }
+        },
+        {
+            "id": "1535.115.4",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.4",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5040,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 4,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.43
+            }
+        },
+        {
+            "id": "1535.115.5",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.5",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5208,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 5,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.58
+            }
+        },
+        {
+            "id": "1535.115.6",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.6",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5040,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 6,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.51
+            }
+        },
+        {
+            "id": "1535.115.7",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.7",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5207,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 7,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.8
+            }
+        },
+        {
+            "id": "1535.115.8",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.8",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5208,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 8,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.85
+            }
+        },
+        {
+            "id": "1535.115.9",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.9",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5039,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 9,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.71
+            }
+        },
+        {
+            "id": "1535.115.10",
+            "type": "Feature",
+            "geometry": {
+                "coordinates": [
+                    -139.12777777777777,
+                    64.04305555555555
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "CURRENT_FLAG": "Y",
+                "MAX_DURATION_MISSING_YEARS": 0,
+                "NORMAL_ID": 115,
+                "FIRST_OCCURRENCE_DATE": null,
+                "YEAR_COUNT_NORMAL_PERIOD": 7,
+                "ID": "1535.115.10",
+                "OCCURRENCE_COUNT": null,
+                "FIRST_YEAR_NORMAL_PERIOD": 1981,
+                "DATE_CALCULATED": "2012-09-21 18:28:50",
+                "FIRST_YEAR": null,
+                "PERCENT_OF_POSSIBLE_OBS": 23.33,
+                "PUBLICATION_CODE": 1,
+                "CLIMATE_IDENTIFIER": "2100402",
+                "E_NORMAL_ELEMENT_NAME": "Mean of hourly station pressure kPa",
+                "PERIOD_BEGIN": 1981,
+                "PERIOD_END": 2010,
+                "TOTAL_OBS_COUNT": 5208,
+                "F_NORMAL_ELEMENT_NAME": "Moyenne de la pression \u00e0 la station horaire en kPa",
+                "NORMAL_CODE": "F",
+                "PERIOD": "NORM",
+                "PROVINCE_CODE": "YT",
+                "LAST_YEAR_NORMAL_PERIOD": 1987,
+                "LAST_YEAR": null,
+                "MONTH": 10,
+                "STATION_NAME": "DAWSON A",
+                "VALUE": 96.49
+            }
+        }
+    ],
+    "numberMatched": 592926,
+    "numberReturned": 10,
+    "links": [
+        {
+            "type": "application/geo+json",
+            "rel": "self",
+            "title": "This document as GeoJSON",
+            "href": "https://api.weather.gc.ca/collections/climate-normals/items?f=json&limit=10&lang=en"
+        },
+        {
+            "rel": "alternate",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "https://api.weather.gc.ca/collections/climate-normals/items?f=jsonld&limit=10&lang=en"
+        },
+        {
+            "type": "text/html",
+            "rel": "alternate",
+            "title": "This document as HTML",
+            "href": "https://api.weather.gc.ca/collections/climate-normals/items?f=html&limit=10&lang=en"
+        },
+        {
+            "type": "application/geo+json",
+            "rel": "next",
+            "title": "items (next)",
+            "href": "https://api.weather.gc.ca/collections/climate-normals/items?offset=10&limit=10&lang=en"
+        },
+        {
+            "type": "application/json",
+            "title": "1981-2010 Climate Normals",
+            "rel": "collection",
+            "href": "https://api.weather.gc.ca/collections/climate-normals/items"
+        }
+    ],
+    "timeStamp": "2024-10-09T17:03:07.763201Z"
+}
