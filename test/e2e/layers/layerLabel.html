@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Layer Control Tests</title>
+  <script type="module" src="mapml.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Specifying the `:defined` selector is recommended to style the map 
+       element, such that styles don't apply when fallback content is in use 
+       (e.g. when scripting is disabled or when custom/built-in elements isn't 
+       supported in the browser). */
+    mapml-viewer:defined {
+      /* Responsive map. */
+      max-width: 100%;
+
+      /* Full viewport. */
+      width: 100%;
+      height: 100%;
+
+      /* Remove default (native-like) border. */
+      /* border: none; */
+    }
+
+    /* Pre-style to avoid FOUC of inline layer- and fallback content. */
+    mapml-viewer:not(:defined)>* {
+      display: none;
+    }
+
+    /* Ensure inline layer content is hidden if custom/built-in elements isn't 
+       supported, or if javascript is disabled. This needs to be defined separately 
+       from the above, because the `:not(:defined)` selector invalidates the entire 
+       declaration in browsers that do not support it. */
+    layer- {
+      display: none;
+    }
+  </style>
+  <noscript>
+    <style>
+      /* Ensure fallback content (children of the map element) is displayed if 
+         custom/built-in elements is supported but javascript is disabled. */
+      mapml-viewer:not(:defined)> :not(layer-) {
+        display: initial;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <mapml-viewer projection="CBMTILE" zoom="3" lat="37.176710163979834" lon="-62.070013924549045" controls>
+
+	<!-- Layer without a label -->
+	<layer- checked>
+        <map-meta name="projection" content="CBMTILE"></map-meta>
+		<map-feature zoom="10">
+			<map-properties>Layer with no label</map-properties>
+			<map-geometry cs="gcrs">
+				<map-point>
+					<map-coordinates>-75.866089 45.463020</map-coordinates>
+				</map-point>
+			</map-geometry>
+        </map-feature>
+	</layer->
+
+  </mapml-viewer>
+</body>
+
+</html>

@@ -345,6 +345,8 @@ export var MapMLLayer = L.LayerGroup.extend({
         layer._titleIsReadOnly = true;
       } else if (layer._layerEl && layer._layerEl.hasAttribute('label')) {
         layer._title = layer._layerEl.getAttribute('label').trim();
+      } else {
+        layer._title = M.options.locale.dfLayer;
       }
     }
     function parseLicenseAndLegend() {
