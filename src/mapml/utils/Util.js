@@ -647,25 +647,43 @@ export const Util = {
   //    used for pasting layers through ctrl+v, drag/drop, and pasting through the contextmenu
   // _pasteLayer: HTMLElement Str -> None
   // Effects: append a layer- element to mapEl, if it is valid
-  _pasteLayer: function (mapEl, text) {
+  _pasteLayer: async function (mapEl, text) {
     try {
+      // try to process text as a link
       new URL(text);
-      // create a new <layer-> child of the <mapml-viewer> element
-      let l =
-        '<layer- src="' +
-        text +
-        '" label="' +
-        M.options.locale.dfLayer +
-        '" checked=""></layer->';
-      mapEl.insertAdjacentHTML('beforeend', l);
-      mapEl.lastElementChild.whenReady().catch(() => {
-        if (mapEl) {
-          // should invoke lifecyle callbacks automatically by removing it from DOM
-          mapEl.removeChild(mapEl.lastChild);
+      // get the content type of the link
+      const response = await fetch(text);
+      const contentType = response.headers.get('Content-Type');
+      if (
+        contentType == 'application/json' ||
+        contentType == 'application/geo+json'
+      ) {
+        // try to process as GeoJSON
+        const textContent = await response.text();
+        try {
+          mapEl.geojson2mapml(JSON.parse(textContent));
+        } catch {
+          console.log('Invalid link!');
         }
-        // garbage collect it
-        l = null;
-      });
+      } else {
+        // try to process as a mapml file
+        // create a new <layer-> child of the <mapml-viewer> element
+        let l =
+          '<layer- src="' +
+          text +
+          '" label="' +
+          M.options.locale.dfLayer +
+          '" checked=""></layer->';
+        mapEl.insertAdjacentHTML('beforeend', l);
+        mapEl.lastElementChild.whenReady().catch(() => {
+          if (mapEl) {
+            // should invoke lifecyle callbacks automatically by removing it from DOM
+            mapEl.removeChild(mapEl.lastChild);
+          }
+          // garbage collect it
+          l = null;
+        });
+      }
     } catch (err) {
       text = text
         .replace(/(<!--.*?-->)|(<!--[\S\s]+?-->)|(<!--[\S\s]*?$)/g, '')
