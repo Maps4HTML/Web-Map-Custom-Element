@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Layer Legend Control Tests</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="mapml.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    mapml-viewer:defined {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    mapml-viewer:not(:defined) > * {
+      display: none;
+    }
+
+    map-layer {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <mapml-viewer projection="CBMTILE" zoom="2" lat="45" lon="-95" controls>
+    <map-layer label="Toporama" src="data/templatedImage.mapml" checked></map-layer>
+
+    <map-layer label="Inline No Legend" checked>
+      <map-meta name="zoom" content="min=0,max=3,value=2"></map-meta>
+      <map-meta name="projection" content="CBMTILE"></map-meta>
+      <map-tile zoom="2" row="10" col="11" src="data/cbmt/2/c11_r10.png"></map-tile>
+    </map-layer>
+
+    <map-layer label="html legend" checked>
+      <map-meta name="zoom" content="min=0,max=3,value=2"></map-meta>
+      <map-meta name="projection" content="CBMTILE"></map-meta>
+      <map-link rel="legend" href="https://maps4html.org/web-map-doc/"></map-link>
+      <map-feature>
+        <map-geometry cs="gcrs">
+          <map-point class="ottawa">
+            <map-coordinates>-75.697193 45.421530</map-coordinates>
+          </map-point>
+        </map-geometry>
+      </map-feature>
+  </mapml-viewer>
+</body>
+
+</html>
