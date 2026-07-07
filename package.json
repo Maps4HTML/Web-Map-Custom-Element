@@ -55,7 +55,7 @@
     "grunt-prettier": "^2.2.0",
     "leaflet": "^1.9.4",
     "leaflet.locatecontrol": "^0.81.1",
-    "mapml-extension": "git+https://github.com/Maps4HTML/mapml-extension",
+    "mapml-extension": "github:Maps4HTML/mapml-extension#main",
     "media-query-parser": "^3.0.2",
     "media-query-solver": "^0.1.3",
     "path": "^0.12.7",
