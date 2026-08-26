@@ -122,12 +122,14 @@ export var ContextMenu = Handler.extend({
       {
         // 8
         text: locale.cmToggleControls + ' (<kbd>T</kbd>)',
-        callback: this._toggleControls
+        callback: this._toggleControls,
+        toggle: true
       },
       {
         // 9
         text: locale.cmToggleDebug + ' (<kbd>D</kbd>)',
-        callback: this._toggleDebug
+        callback: this._toggleDebug,
+        toggle: true
       },
       {
         // 10
@@ -461,6 +463,11 @@ export var ContextMenu = Handler.extend({
   },
 
   _toggleControls: function (e) {
+    let el = this.contextMenu._items[8].el.el;
+    el.setAttribute(
+      'aria-checked',
+      el.getAttribute('aria-checked') === 'true' ? 'false' : 'true'
+    );
     let mapEl =
       e instanceof KeyboardEvent ? this._map.options.mapEl : this.options.mapEl;
     if (mapEl.controls) {
@@ -505,6 +512,11 @@ export var ContextMenu = Handler.extend({
   },
 
   _toggleDebug: function (e) {
+    let el = this.contextMenu._items[9].el.el;
+    el.setAttribute(
+      'aria-checked',
+      el.getAttribute('aria-checked') === 'true' ? 'false' : 'true'
+    );
     let mapEl =
       e instanceof KeyboardEvent ? this._map.options.mapEl : this.options.mapEl;
     mapEl.toggleDebug();
@@ -752,6 +764,11 @@ export var ContextMenu = Handler.extend({
       el.setAttribute('aria-haspopup', 'true');
       el.setAttribute('aria-expanded', 'false');
       el.setAttribute('aria-controls', 'mapml-copy-submenu');
+    }
+
+    if (options.toggle) {
+      el.setAttribute('role', 'checkbox');
+      el.setAttribute('aria-checked', 'false');
     }
 
     DomEvent.on(el, 'mouseover', this._onItemMouseOver, this)
