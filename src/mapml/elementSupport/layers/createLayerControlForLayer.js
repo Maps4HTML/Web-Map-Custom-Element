@@ -166,7 +166,7 @@ export var createLayerControlHTML = async function () {
     legendLink.className = 'mapml-layer-item-legend-link';
 
     legendImage.src = this._layer._legendUrl;
-    legendImage.alt = `${this._layer._title} legend`;
+    legendImage.alt = `${this._layer._title} ${mapEl.locale.lmLegend}`;
     legendImage.loading = 'lazy';
     legendImage.decoding = 'async';
     legendImage.className = 'mapml-layer-item-legend-image';

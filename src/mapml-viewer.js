@@ -481,7 +481,6 @@ export class HTMLMapmlViewerElement extends HTMLElement {
       collapsed: true,
       mapEl: this
     }).addTo(this._map);
-    this._map.on('movestart', this._layerControl.collapse, this._layerControl);
 
     let scaleValue = M.options.announceScale;
 

@@ -29,34 +29,37 @@ export var LayerControl = Control.Layers.extend({
   },
   onAdd: function () {
     this._initLayout();
-    // Adding event on layer control button
+    // Remove Leaflet's auto-open/close listeners: the control now opens and
+    // closes only via clicking the toggle icon.
+    DomEvent.off(this._container, 'mouseenter', this._expandSafely, this);
+    DomEvent.off(this._container, 'mouseleave', this.collapse, this);
+    this._map.off('click', this.collapse, this);
+
+    // Replace the toggle anchor with a clone to strip Leaflet's built-in
+    // expand-only click/keydown handlers, then wire toggle behaviour.
+    const originalLink = this._layersLink;
+    const link = originalLink.cloneNode(true);
+    originalLink.parentNode.replaceChild(link, originalLink);
+    this._layersLink = link;
     DomEvent.on(
-      this._container.getElementsByTagName('a')[0],
-      'keydown',
-      this._focusFirstLayer,
-      this._container
-    );
-    // Suppress synthetic mouse events on touch-expand so the browser
-    // can't retarget the ghost click to the settings gear button.
-    DomEvent.on(
-      this._container.getElementsByTagName('a')[0],
-      'touchend',
-      this._expandOnTouch,
+      link,
+      {
+        click: function (e) {
+          DomEvent.preventDefault(e);
+          this._toggle();
+        },
+        keydown: function (e) {
+          if (e.keyCode === 13) {
+            DomEvent.preventDefault(e);
+            this._toggle();
+          }
+        }
+      },
       this
     );
-    // Collapse on any touch outside the control; movestart alone is
-    // unreliable because a plain tap doesn't pan the map.
-    this._outsideTouchHandler = (e) => {
-      if (!this._container.contains(e.target)) {
-        this._container._isExpanded = false;
-        this.collapse(e);
-      }
-    };
-    this._map
-      .getContainer()
-      .addEventListener('touchstart', this._outsideTouchHandler, {
-        passive: true
-      });
+
+    // Adding event on layer control button
+    DomEvent.on(link, 'keydown', this._focusFirstLayer, this._container);
     DomEvent.on(
       this._container,
       'contextmenu',
@@ -73,23 +76,11 @@ export var LayerControl = Control.Layers.extend({
   },
   onRemove: function (map) {
     DomEvent.off(
-      this._container.getElementsByTagName('a')[0],
+      this._layersLink,
       'keydown',
       this._focusFirstLayer,
       this._container
     );
-    DomEvent.off(
-      this._container.getElementsByTagName('a')[0],
-      'touchend',
-      this._expandOnTouch,
-      this
-    );
-    if (this._outsideTouchHandler) {
-      map
-        .getContainer()
-        .removeEventListener('touchstart', this._outsideTouchHandler);
-      this._outsideTouchHandler = null;
-    }
   },
   addOrUpdateOverlay: function (layer, name) {
     var alreadyThere = false;
@@ -123,12 +114,11 @@ export var LayerControl = Control.Layers.extend({
   _focusFirstLayer: function (e) {
     if (
       e.key === 'Enter' &&
-      this.className ===
-        'leaflet-control-layers leaflet-control leaflet-control-layers-expanded'
+      this.classList.contains('leaflet-control-layers-expanded')
     ) {
-      var elem =
-        this.children[1].children[2].children[0].children[0].children[0]
-          .children[0];
+      var elem = this.querySelector(
+        '.leaflet-control-layers-overlays input.leaflet-control-layers-selector'
+      );
       if (elem) setTimeout(() => elem.focus(), 0);
     }
   },
@@ -193,40 +183,26 @@ export var LayerControl = Control.Layers.extend({
     return layercontrols;
   },
 
-  //overrides collapse and conditionally collapses the panel
-  collapse: function (e) {
-    // if layer control is not expanded, return
-    if (!this._container.className.includes('expanded')) {
-      return;
-    }
-    // return if layer contextmenu is still open
-    if (
-      !this._map.contextMenu._extentLayerMenu.hidden ||
-      !this._map.contextMenu._layerMenu.hidden
-    ) {
-      return;
-    }
-    if (
-      e.target.tagName === 'SELECT' ||
-      (e.relatedTarget &&
-        e.relatedTarget.parentElement &&
-        (e.relatedTarget.className === 'mapml-contextmenu mapml-layer-menu' ||
-          e.relatedTarget.parentElement.className ===
-            'mapml-contextmenu mapml-layer-menu')) ||
-      (this._map && this._map.contextMenu._layerMenu.style.display === 'block')
-    )
-      return this;
-
+  // Only the close button (or programmatic callers) should collapse the panel.
+  collapse: function () {
     DomUtil.removeClass(this._container, 'leaflet-control-layers-expanded');
-    if (e.originalEvent?.pointerType === 'touch') {
-      this._container._isExpanded = false;
+    this._container._isExpanded = false;
+    return this;
+  },
+  _toggle: function () {
+    if (DomUtil.hasClass(this._container, 'leaflet-control-layers-expanded')) {
+      this.collapse();
+    } else {
+      this._expandSafely();
     }
     return this;
   },
-  _expandOnTouch: function (e) {
-    DomEvent.preventDefault(e);
+  // Track expanded state so touch-device logic in _preventDefaultContextMenu
+  // and any callers can consult _isExpanded uniformly.
+  expand: function () {
+    Control.Layers.prototype.expand.call(this);
     this._container._isExpanded = true;
-    this.expand();
+    return this;
   },
   _preventDefaultContextMenu: function (e) {
     let latlng = this._map.mouseEventToLatLng(e);
