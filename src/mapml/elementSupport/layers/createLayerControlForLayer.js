@@ -145,13 +145,38 @@ export var createLayerControlHTML = async function () {
     // to `.href` here. `rel="noopener noreferrer"` closes the
     // reverse-tabnabbing and referrer-leak side channels for the
     // author-supplied cross-origin destination.
-    var legendLink = document.createElement('a');
-    legendLink.text = ' ' + this._layer._title;
+    layerItemName.innerText = this._layer._title;
+
+    let legendControl = DomUtil.create(
+        'details',
+        'mapml-layer-item-legend mapml-control-layers',
+        layerItemSettings
+      ),
+      legendSummary = DomUtil.create('summary'),
+      legendLink = document.createElement('a'),
+      legendImage = document.createElement('img');
+
+    legendSummary.innerText = mapEl.locale.lmLegend;
+    legendControl.appendChild(legendSummary);
+
     legendLink.href = this._layer._legendUrl;
     legendLink.target = '_blank';
     legendLink.rel = 'noopener noreferrer';
     legendLink.draggable = false;
-    layerItemName.appendChild(legendLink);
+    legendLink.className = 'mapml-layer-item-legend-link';
+
+    legendImage.src = this._layer._legendUrl;
+    legendImage.alt = `${this._layer._title} ${mapEl.locale.lmLegend}`;
+    legendImage.loading = 'lazy';
+    legendImage.decoding = 'async';
+    legendImage.className = 'mapml-layer-item-legend-image';
+    legendImage.addEventListener('error', () => {
+      legendLink.textContent = mapEl.locale.lmOpenInNewTab;
+      legendImage.remove();
+    });
+
+    legendLink.appendChild(legendImage);
+    legendControl.appendChild(legendLink);
   } else {
     // textContent (not innerHTML) so that a malicious layer title
     // cannot inject markup into the layer control.

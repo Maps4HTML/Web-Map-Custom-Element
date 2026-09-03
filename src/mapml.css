@@ -95,6 +95,19 @@ the browser)' */
   color: revert;
 }
 
+.mapml-layer-item-legend-link {
+  display: inline-block;
+  margin-block-start: .25rem;
+}
+
+.mapml-layer-item-legend-image {
+  display: block;
+  max-width: min(100%, 16rem);
+  height: auto;
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+}
+
  .leaflet-top .leaflet-control {
    margin-top: 5px;
  }
@@ -277,9 +290,6 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 .leaflet-control-layers fieldset {
   margin: 0;
   padding: 0;
-  /* Invisible (white) default fieldset border adds ~1.6px, shifting controls
-     below when a single-layer control expands on hover; remove it. */
-  border: 0;
   min-height: 44px;
 }
 
@@ -305,6 +315,42 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 .leaflet-control .leaflet-control-layers-toggle {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='m11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z'/%3E%3C/svg%3E");
   background-size: 34px;
+}
+
+/* When the panel is expanded, split the visual "box" into two: the toggle
+   icon keeps its own bordered white square (matching its collapsed look),
+   and the layer list becomes a separate bordered white box below it. The
+   container itself becomes a transparent layout wrapper. pointer-events:
+   none lets map drag/pan pass through the empty area beside the toggle
+   and beside/above the expanded list; children re-enable pointer-events. */
+.leaflet-control-layers-expanded {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+  display: block;
+  margin-left: auto;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+  pointer-events: auto;
+}
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+  display: block;
+  position: relative;
+  margin-top: 1px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+  overflow: hidden;
+  pointer-events: auto;
 }
 
 /* Revert Leaflet styles that are causing misalignment. */
@@ -804,7 +850,7 @@ label.mapml-layer-item-toggle {
   padding-block-start: .25rem;
   padding-block-end: .25rem;
   padding-inline-start: .25rem;
-  padding-inline-end: 1rem;
+  display: inline-block;
 }
 
 .mapml-layer-item-settings > * {
